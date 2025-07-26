@@ -5,8 +5,9 @@ Default permissions for the plugin
 #### This default permission set includes the following:
 
 - `allow-find`
-- `allow-fond-onw`
-- `allow-delete`
+- `allow-fond-one`
+- `allow-count-documents`
+- `allow-list-collection-names`
 
 ## Permission Table
 

@@ -427,10 +427,10 @@
           "markdownDescription": "Denies the update_one command without any pre-configured scope."
         },
         {
-          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-find`\n- `allow-fond-onw`\n- `allow-delete`",
+          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-find`\n- `allow-fond-one`\n- `allow-count-documents`\n- `allow-list-collection-names`",
           "type": "string",
           "const": "default",
-          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-find`\n- `allow-fond-onw`\n- `allow-delete`"
+          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-find`\n- `allow-fond-one`\n- `allow-count-documents`\n- `allow-list-collection-names`"
         }
       ]
     }
