@@ -4,7 +4,7 @@ Default permissions for the plugin
 
 #### This default permission set includes the following:
 
-- `allow-ping`
+- `allow-query`
 
 ## Permission Table
 
@@ -14,6 +14,58 @@ Default permissions for the plugin
 <th>Description</th>
 </tr>
 
+
+<tr>
+<td>
+
+`polodb:allow-inser-one`
+
+</td>
+<td>
+
+Enables the inser_one command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`polodb:deny-inser-one`
+
+</td>
+<td>
+
+Denies the inser_one command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`polodb:allow-insert-many`
+
+</td>
+<td>
+
+Enables the insert_many command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`polodb:deny-insert-many`
+
+</td>
+<td>
+
+Denies the insert_many command without any pre-configured scope.
+
+</td>
+</tr>
 
 <tr>
 <td>

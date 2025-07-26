@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-inser-one"
+description = "Enables the inser_one command without any pre-configured scope."
+commands.allow = ["inser_one"]
+
+[[permission]]
+identifier = "deny-inser-one"
+description = "Denies the inser_one command without any pre-configured scope."
+commands.deny = ["inser_one"]
