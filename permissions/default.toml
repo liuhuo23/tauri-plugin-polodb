@@ -1,3 +1,8 @@
 [default]
 description = "Default permissions for the plugin"
-permissions = ["allow-query"]
+permissions = [
+  "allow-find",
+  "allow-fond-one",
+  "allow-count-documents",
+  "allow-list-collection-names",
+]

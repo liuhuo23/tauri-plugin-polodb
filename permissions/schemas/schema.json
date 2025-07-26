@@ -295,6 +295,78 @@
       "type": "string",
       "oneOf": [
         {
+          "description": "Enables the count_documents command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-count-documents",
+          "markdownDescription": "Enables the count_documents command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the count_documents command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-count-documents",
+          "markdownDescription": "Denies the count_documents command without any pre-configured scope."
+        },
+        {
+          "description": "Enables the create_collection command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-create-collection",
+          "markdownDescription": "Enables the create_collection command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the create_collection command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-create-collection",
+          "markdownDescription": "Denies the create_collection command without any pre-configured scope."
+        },
+        {
+          "description": "Enables the delete_many command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-delete-many",
+          "markdownDescription": "Enables the delete_many command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the delete_many command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-delete-many",
+          "markdownDescription": "Denies the delete_many command without any pre-configured scope."
+        },
+        {
+          "description": "Enables the drop_collection command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-drop-collection",
+          "markdownDescription": "Enables the drop_collection command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the drop_collection command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-drop-collection",
+          "markdownDescription": "Denies the drop_collection command without any pre-configured scope."
+        },
+        {
+          "description": "Enables the find command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-find",
+          "markdownDescription": "Enables the find command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the find command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-find",
+          "markdownDescription": "Denies the find command without any pre-configured scope."
+        },
+        {
+          "description": "Enables the find_one command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-find-one",
+          "markdownDescription": "Enables the find_one command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the find_one command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-find-one",
+          "markdownDescription": "Denies the find_one command without any pre-configured scope."
+        },
+        {
           "description": "Enables the inser_one command without any pre-configured scope.",
           "type": "string",
           "const": "allow-inser-one",
@@ -319,22 +391,46 @@
           "markdownDescription": "Denies the insert_many command without any pre-configured scope."
         },
         {
-          "description": "Enables the ping command without any pre-configured scope.",
+          "description": "Enables the list_collection_names command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-ping",
-          "markdownDescription": "Enables the ping command without any pre-configured scope."
+          "const": "allow-list-collection-names",
+          "markdownDescription": "Enables the list_collection_names command without any pre-configured scope."
         },
         {
-          "description": "Denies the ping command without any pre-configured scope.",
+          "description": "Denies the list_collection_names command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-ping",
-          "markdownDescription": "Denies the ping command without any pre-configured scope."
+          "const": "deny-list-collection-names",
+          "markdownDescription": "Denies the list_collection_names command without any pre-configured scope."
         },
         {
-          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-query`",
+          "description": "Enables the update_many command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-update-many",
+          "markdownDescription": "Enables the update_many command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the update_many command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-update-many",
+          "markdownDescription": "Denies the update_many command without any pre-configured scope."
+        },
+        {
+          "description": "Enables the update_one command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-update-one",
+          "markdownDescription": "Enables the update_one command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the update_one command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-update-one",
+          "markdownDescription": "Denies the update_one command without any pre-configured scope."
+        },
+        {
+          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-find`\n- `allow-fond-onw`\n- `allow-delete`",
           "type": "string",
           "const": "default",
-          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-query`"
+          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-find`\n- `allow-fond-onw`\n- `allow-delete`"
         }
       ]
     }

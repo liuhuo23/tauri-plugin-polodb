@@ -255,4 +255,74 @@ impl<R: Runtime> Polodb<R> {
         })?;
         Ok(true)
     }
+
+    /// 获取数据库
+    /// 返回数据库实例
+    pub fn db(&self) -> crate::Result<Database> {
+        Ok(self
+            .db
+            .lock()
+            .map_err(|e| {
+                crate::Error::Io(std::io::Error::new(
+                    std::io::ErrorKind::Other,
+                    e.to_string(),
+                ))
+            })?
+            .clone())
+    }
+
+    /// 更新
+    /// filter: 更新条件（BSON 文档）
+    /// update: 更新内容（BSON 文档）
+    /// 返回更新后的文档
+    pub fn update_one(
+        &self,
+        collection: &str,
+        filter: polodb_core::bson::Document,
+        update: polodb_core::bson::Document,
+    ) -> crate::Result<Option<polodb_core::bson::Document>> {
+        let db = self.db()?;
+        let coll = db.collection::<Document>(collection);
+        let result = coll.update_one(filter.clone(), update).map_err(|e| {
+            crate::Error::Io(std::io::Error::new(
+                std::io::ErrorKind::Other,
+                e.to_string(),
+            ))
+        })?;
+        if result.matched_count == 0 {
+            return Ok(None);
+        }
+        let updated_doc = coll.find_one(filter.clone()).map_err(|e| {
+            crate::Error::Io(std::io::Error::new(
+                std::io::ErrorKind::Other,
+                e.to_string(),
+            ))
+        })?;
+        Ok(updated_doc)
+    }
+
+    /// 更新多个文档
+    /// collection: 集合名称
+    /// filter: 更新条件（BSON 文档）
+    /// update: 更新内容（BSON 文档）
+    /// 返回更新后的文档列表
+    pub fn update_many(
+        &self,
+        collection: &str,
+        filter: polodb_core::bson::Document,
+        update: polodb_core::bson::Document,
+    ) -> crate::Result<Vec<polodb_core::bson::Document>> {
+        let db = self.db()?;
+        let coll = db.collection::<Document>(collection);
+        let result = coll.update_many(filter.clone(), update).map_err(|e| {
+            crate::Error::Io(std::io::Error::new(
+                std::io::ErrorKind::Other,
+                e.to_string(),
+            ))
+        })?;
+        if result.matched_count == 0 {
+            return Ok(Vec::new());
+        }
+        return self.find(collection, Some(filter), None, None, None);
+    }
 }

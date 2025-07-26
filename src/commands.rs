@@ -46,6 +46,7 @@ pub(crate) async fn delete_many<R: Runtime>(
     app.polodb().delete_many(collection, filter)?;
     Ok(true)
 }
+
 #[command]
 pub(crate) async fn count_documents<R: Runtime>(
     app: AppHandle<R>,
@@ -54,6 +55,7 @@ pub(crate) async fn count_documents<R: Runtime>(
     let count = app.polodb().count_documents(collection)?;
     Ok(count)
 }
+
 #[command]
 pub(crate) async fn drop_collection<R: Runtime>(
     app: AppHandle<R>,
@@ -62,13 +64,44 @@ pub(crate) async fn drop_collection<R: Runtime>(
     app.polodb().drop_collection(collection)?;
     Ok(true)
 }
+
 #[command]
 pub(crate) async fn list_collection_names<R: Runtime>(app: AppHandle<R>) -> Result<Vec<String>> {
     let names = app.polodb().list_collection_names()?;
     Ok(names)
 }
+
 #[command]
 pub(crate) async fn create_collection<R: Runtime>(app: AppHandle<R>, name: &str) -> Result<()> {
     app.polodb().create_collection(name)?;
     Ok(())
+}
+
+#[command]
+pub(crate) async fn update_one<R: Runtime>(
+    app: AppHandle<R>,
+    collection: &str,
+    filter: Document,
+    update: Document,
+) -> Result<Option<Document>> {
+    app.polodb().update_one(collection, filter, update)
+}
+
+#[command]
+pub(crate) async fn update_many<R: Runtime>(
+    app: AppHandle<R>,
+    collection: &str,
+    filter: Document,
+    update: Document,
+) -> Result<Vec<Document>> {
+    app.polodb().update_many(collection, filter, update)
+}
+
+#[command]
+pub async fn find_one<R: Runtime>(
+    app: AppHandle<R>,
+    collection: &str,
+    filter: Document,
+) -> Result<Option<Document>> {
+    app.polodb().find_one(collection, filter)
 }

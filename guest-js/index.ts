@@ -53,3 +53,27 @@ export async function create_collection(collection: String): Promise<boolean> {
     collection,
   })
 }
+
+export async function find_one(collection: String, filter: String): Promise<any | null> {
+  return await invoke<any | null>('plugin:polodb|find_one', {
+    collection,
+    filter,
+  })
+}
+
+export async function update_one(collection: String, filter: String, update: String): Promise<boolean> {
+  return await invoke<boolean>('plugin:polodb|update_one', {
+    collection,
+    filter,
+    update,
+  })
+}
+
+export async function update_many(collection: String, filter: String, update: String): Promise<boolean> {
+  return await invoke<boolean>('plugin:polodb|update_many', {
+    collection,
+    filter,
+    update,
+  })
+}
+
