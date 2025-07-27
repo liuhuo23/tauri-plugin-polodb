@@ -2,7 +2,7 @@
 description = "Default permissions for the plugin"
 permissions = [
   "allow-find",
-  "allow-fond-one",
+  "allow-find-one",
   "allow-count-documents",
   "allow-list-collection-names",
 ]
