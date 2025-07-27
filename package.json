@@ -1,7 +1,7 @@
 {
   "name": "tauri-plugin-polodb-api",
-  "version": "0.1.0",
-  "author": "You",
+  "version": "0.0.1",
+  "author": "liuhuo23",
   "description": "",
   "type": "module",
   "types": "./dist-js/index.d.ts",
