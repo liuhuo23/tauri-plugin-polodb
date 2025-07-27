@@ -1,4 +1,3 @@
-use polodb_core::bson::Document;
 use tauri::{
     plugin::{Builder, TauriPlugin},
     Manager, Runtime,
