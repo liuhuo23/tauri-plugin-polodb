@@ -13,6 +13,23 @@
 tauri-plugin-polodb = { git = "https://github.com/liuhuo23/tauri-plugin-polodb.git" }
 ```
 
+### 前端安装
+
+使用 npm：
+```sh
+npm install tauri-plugin-polodb
+```
+
+使用 pnpm：
+```sh
+pnpm add tauri-plugin-polodb
+```
+
+使用 yarn：
+```sh
+yarn add tauri-plugin-polodb
+```
+
 ## Rust 端用法
 
 插件初始化：
